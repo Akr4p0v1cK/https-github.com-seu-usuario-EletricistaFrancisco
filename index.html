@@ -454,6 +454,10 @@
                                 <textarea id="form-message" name="message" rows="4"
                                     placeholder="Descreva brevemente o que precisa..." required></textarea>
                             </div>
+                            <div class="form-group form-group-checkbox">
+                                <input type="checkbox" id="form-lgpd" name="lgpd" required>
+                                <label for="form-lgpd">Estou de acordo com a <a href="politica-privacidade.html" target="_blank" rel="noopener noreferrer">Política de Privacidade</a> e autorizo o tratamento dos meus dados para fins de orçamento.</label>
+                            </div>
                             <button type="submit" class="btn btn-secondary btn-block" id="form-submit-btn">
                                 <i data-lucide="send"></i> Enviar Mensagem
                             </button>
@@ -544,8 +548,8 @@
                 <div class="footer-link-group">
                     <h4>Legal</h4>
                     <a href="#">Termos de Uso</a>
-                    <a href="#">Políticas de Privacidade</a>
-                    <a href="#">Normas Técnicas (NBR 5410)</a>
+                    <a href="politica-privacidade.html">Políticas de Privacidade</a>
+                    <a href="index.html#servicos">Normas Técnicas (NBR 5410)</a>
                 </div>
             </div>
         </div>
@@ -561,6 +565,17 @@
             </div>
         </div>
     </footer>
+
+    <!-- Cookie Consent Banner (LGPD) -->
+    <div id="cookie-banner" class="cookie-banner">
+        <div class="cookie-banner-content">
+            <p>Utilizamos cookies essenciais para salvar suas preferências de tema e consentimento. Ao continuar navegando, você concorda com a nossa <a href="politica-privacidade.html" target="_blank" rel="noopener noreferrer">Política de Privacidade</a>.</p>
+            <div class="cookie-banner-actions">
+                <button id="cookie-accept" class="btn btn-secondary btn-sm">Aceitar</button>
+                <button id="cookie-decline" class="btn btn-outline btn-sm" style="border-color: var(--text-muted); color: var(--text-muted);">Recusar</button>
+            </div>
+        </div>
+    </div>
 
     <!-- JS Scripts -->
     <script src="script.js"></script>

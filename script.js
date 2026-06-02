@@ -117,6 +117,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
+            // LGPD Checkbox validation
+            const lgpdCheckbox = document.getElementById('form-lgpd');
+            if (lgpdCheckbox && !lgpdCheckbox.checked) {
+                showFeedback('Você precisa aceitar a Política de Privacidade para enviar a mensagem.', 'error');
+                resetButton();
+                return;
+            }
+
             // Simulate form submission (AJAX)
             setTimeout(() => {
                 // Success Scenario
@@ -129,6 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
         function showFeedback(msg, type) {
             feedbackMessage.textContent = msg;
             feedbackMessage.className = 'form-feedback ' + type;
+            feedbackMessage.style.display = 'block';
             
             // Auto hide feedback after 8 seconds
             setTimeout(() => {
@@ -143,5 +152,30 @@ document.addEventListener('DOMContentLoaded', () => {
                 lucide.createIcons();
             }
         }
+    }
+
+    // 6. Cookie Consent Banner (LGPD)
+    const cookieBanner = document.getElementById('cookie-banner');
+    const cookieAcceptBtn = document.getElementById('cookie-accept');
+    const cookieDeclineBtn = document.getElementById('cookie-decline');
+
+    if (cookieBanner && cookieAcceptBtn && cookieDeclineBtn) {
+        const consent = localStorage.getItem('cookie-consent');
+        if (!consent) {
+            // Show banner after 1 second delay
+            setTimeout(() => {
+                cookieBanner.classList.add('show');
+            }, 1000);
+        }
+
+        cookieAcceptBtn.addEventListener('click', () => {
+            localStorage.setItem('cookie-consent', 'accepted');
+            cookieBanner.classList.remove('show');
+        });
+
+        cookieDeclineBtn.addEventListener('click', () => {
+            localStorage.setItem('cookie-consent', 'declined');
+            cookieBanner.classList.remove('show');
+        });
     }
 });

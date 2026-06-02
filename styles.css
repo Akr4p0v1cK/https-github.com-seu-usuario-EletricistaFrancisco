@@ -1430,3 +1430,111 @@ body.dark-theme .sun-icon {
         text-align: center;
     }
 }
+
+/* Cookie Consent Banner (LGPD) */
+.cookie-banner {
+    position: fixed;
+    bottom: -200px; /* Hidden initially, slides up */
+    left: 24px;
+    right: 24px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-lg);
+    padding: 24px;
+    z-index: 9999;
+    transition: bottom 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.cookie-banner.show {
+    bottom: 24px;
+}
+
+.cookie-banner-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.cookie-banner-content p {
+    font-size: 0.9rem;
+    color: var(--text-main);
+    line-height: 1.5;
+    flex: 1;
+    margin: 0;
+}
+
+.cookie-banner-content a {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.cookie-banner-content a:hover {
+    color: var(--primary-hover);
+}
+
+.cookie-banner-actions {
+    display: flex;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .cookie-banner {
+        left: 12px;
+        right: 12px;
+        padding: 16px;
+    }
+    .cookie-banner.show {
+        bottom: 12px;
+    }
+    .cookie-banner-content {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+    }
+    .cookie-banner-actions {
+        justify-content: flex-end;
+    }
+}
+
+/* Form Checkbox Styling */
+.form-group-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.form-group-checkbox input[type="checkbox"] {
+    width: auto;
+    margin-top: 4px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.form-group-checkbox label {
+    font-weight: 500;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: var(--text-muted);
+    cursor: pointer;
+    margin: 0;
+}
+
+.form-group-checkbox label a {
+    color: var(--primary);
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.form-group-checkbox label a:hover {
+    color: var(--primary-hover);
+}
